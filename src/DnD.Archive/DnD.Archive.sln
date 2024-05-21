@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DnD.Archive.Api", "DnD.Archive.Api\DnD.Archive.Api.csproj", "{441F8677-4345-4109-8C12-262635789EE7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{DAE71D56-6FCB-410E-8E2B-52A34B1F561A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DnD.Archive.Common.Database", "DnD.Archive.Common.Database\DnD.Archive.Common.Database.csproj", "{178D0787-59A5-4DB4-95A0-91DA8C000C3C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{441F8677-4345-4109-8C12-262635789EE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{441F8677-4345-4109-8C12-262635789EE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{441F8677-4345-4109-8C12-262635789EE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{441F8677-4345-4109-8C12-262635789EE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{178D0787-59A5-4DB4-95A0-91DA8C000C3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{178D0787-59A5-4DB4-95A0-91DA8C000C3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{178D0787-59A5-4DB4-95A0-91DA8C000C3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{178D0787-59A5-4DB4-95A0-91DA8C000C3C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{178D0787-59A5-4DB4-95A0-91DA8C000C3C} = {DAE71D56-6FCB-410E-8E2B-52A34B1F561A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E48EB16-11FE-47E4-85AC-D0DEC851078E}
+	EndGlobalSection
+EndGlobal
