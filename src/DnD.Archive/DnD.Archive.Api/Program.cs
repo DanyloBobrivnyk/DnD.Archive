@@ -1,11 +1,13 @@
-using AutoMapper.Configuration.Annotations;
 using DnD.Archive.Api.Helpers.Automapper;
 using DnD.Archive.Api.Helpers.DB;
-using DnD.Archive.Api.Models;
 using DnD.Archive.Api.Services.Abstract;
 using DnD.Archive.Api.Services.Implementation;
-using Microsoft.EntityFrameworkCore;
-using System.Text.Json.Serialization;
+
+IConfiguration configuration = new ConfigurationBuilder()
+                            .AddJsonFile("appsettings.json")
+                            .Build();
+
+const string DB_CONNECTION_VARIABLE_PATH = "ConnectionStrings:SQLCONNSTR_DnDArchive";
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +21,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient(_ =>
 {
-    var dbContextFactory = new DnDArchiveContextFactory();
+    var connString = configuration[DB_CONNECTION_VARIABLE_PATH];
+    var dbContextFactory = new DnDArchiveContextFactory(connString);
     return dbContextFactory.CreateDbContext(args);
 });
 

@@ -6,18 +6,22 @@ namespace DnD.Archive.Api.Helpers.DB
 {
     public class DnDArchiveContextFactory : IDesignTimeDbContextFactory<DnDArchiveContext>
     {
+        private string _dbConnectionString = null!;
+
+        public DnDArchiveContextFactory(string connectionString)
+        {
+            _dbConnectionString = connectionString;
+        }
+
         public DnDArchiveContext CreateDbContext(string[] args)
         {
-            const string ENV_VARIABLE_NAME = "SQLCONNSTR_DnDArchive";
-            var connectionString = Environment.GetEnvironmentVariable(ENV_VARIABLE_NAME);
-            var connectionStr = "Data Source=(localdb)\\ProjectModels;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
-            /*if (connectionString == null)
+            if (_dbConnectionString== null)
             {
-                throw new ArgumentNullException(ENV_VARIABLE_NAME);
-            }*/
+                throw new ArgumentNullException("Connection string was not provided.");
+            }
 
             var optionsBuilder = new DbContextOptionsBuilder<DnDArchiveContext>();
-            optionsBuilder.UseSqlServer(connectionStr);
+            optionsBuilder.UseSqlServer(_dbConnectionString);
 
             return new DnDArchiveContext(optionsBuilder.Options);
         }
